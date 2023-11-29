@@ -828,7 +828,7 @@ const sendFilterMap = () => {
 <option value={"Villa del Carbon"}>Villa del Carbon</option>
 <option value={"Villa Guerrero"}>Villa Guerrero</option>
 <option value={"Villa Victoria"}>Villa Victoria</option>
-<option value={"Xonacatlan<"}>Xonacatlan</option>
+<option value={"Xonacatlan"}>Xonacatlan</option>
 <option value={"Zacazonapan"}>Zacazonapan</option>
 <option value={"Zacualpan"}>Zacualpan</option>
 <option value={"Zinacantepec"}>Zinacantepec</option>
