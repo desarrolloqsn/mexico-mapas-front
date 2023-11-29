@@ -118,11 +118,12 @@ const handleEstadoChange = (event) =>{
       const sendFilterMap = () => {
         if (selectedOption ===  `${selectedOption}`) {
      
-         const formattedOption = selectedOption.replace(/ /g, '_');
-          window.location.href = `https://mexico-mapas1.vercel.app/mapas/mapa-Choropleth_NSE_${formattedOption}.html`;
-
-      }
-        
+          const formattedOption = selectedOption.replace(/ /g, '_');
+          const url = `https://mexico-mapas1.vercel.app/mapas/mapa-Choropleth_NSE_${formattedOption}.html`;
+          
+          // Abre el enlace en una nueva ventana
+          window.open(url, '_blank');
+        }
      
     }
   
@@ -844,7 +845,7 @@ const handleEstadoChange = (event) =>{
 <option value={"Cozumel"}>Cozumel</option>
 <option value={"Felipe Carrillo Puerto"}>Felipe Carrillo Puerto</option>
 <option value={"Isla Mujeres"}>Isla Mujeres</option>
-<option value={"Othón P Blanco"}>Othón P. Blanco</option>
+<option value={"Othón P. Blanco"}>Othón P. Blanco</option>
 <option value={"Benito Juárez"}>Benito Juárez</option>
 <option value={"José María Morelos"}>José María Morelos</option>
 <option value={"Lázaro Cárdenas"}>Lázaro Cárdenas</option>
