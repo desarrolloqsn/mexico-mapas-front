@@ -737,12 +737,12 @@ const sendFilterMap = () => {
 <option value={"Apaxco "}>Apaxco</option>
 <option value={"Atenco"}>Atenco</option>
 <option value={"Atizapan de Zaragoza "}>Atizapan de Zaragoza</option>
-<option value={"Atlacomulco  "}>Atlacomulco</option>
+<option value={"Atlacomulco"}>Atlacomulco</option>
 <option value={"Atlautla"}>Atlautla</option>
 <option value={"Axapusco"}>Axapusco</option>
 <option value={"Calimaya"}>Calimaya</option>
 <option value={"Capulhuac"}>Capulhuac</option>
-<option value={" Coacalco de Berriozabal"}>Coacalco de Berriozabal</option>
+<option value={"Coacalco de Berriozabal"}>Coacalco de Berriozabal</option>
 <option value={"Coatepec Harinas"}>Coatepec Harinas</option>
 <option value={"Cocotitlan"}>Cocotitlan</option>
 <option value={"Coyotepec"}>Coyotepec</option>
