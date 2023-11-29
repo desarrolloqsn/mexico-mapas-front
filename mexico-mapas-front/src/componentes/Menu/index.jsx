@@ -33,81 +33,6 @@ const MenuDesplegable = () => {
   
       
 
-  <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" >
-
-    <Menu.Item key="/dashboard" icon={  <BarChartOutlined />} onClick={()=>handleMenuClick("")}>
-       
-      <span> Dashboard</span>
-      <Link to="/dashboard"></Link>
-    </Menu.Item>
-
-
-
-   
- 
-    <SubMenu icon={< AiOutlineCluster />} title="Modelos" >
-
-
-        <Menu.Item icon={<AiOutlineCluster /> } onClick={()=>handleMenuClick("Atributos de Personalidad")}>
-        
-            <span>Atributo de Personalidad</span>
-            <Link to="/dashboard/Atributos de Personalidad"></Link>
-        </Menu.Item>
-
-
-        <Menu.Item icon={<AiOutlineCluster /> } onClick={()=>handleMenuClick("Atributos de Politicos")}>
-            
-            <span>Atributo de Políticos</span>
-            <Link to="/dashboard/Atributos de Politicos"></Link>
-        </Menu.Item>
-
-        <Menu.Item icon={<AiOutlineCluster /> } onClick={()=>handleMenuClick("Continuidad y cambio")}>
-        
-        <span>Continuidad y cambio</span>
-        <Link to="/dashboard/Continuidad y cambio"></Link>
-    </Menu.Item>
-
-    <Menu.Item icon={<AiOutlineCluster /> } onClick={()=>handleMenuClick("Emociones Básicas (Plutchik)")}>
-        
-        <span>Emociones básicas</span>
-        <Link to="/dashboard/Emociones Básicas (Plutchik)"></Link>
-    </Menu.Item>
-
-    <Menu.Item icon={<AiOutlineCluster /> } onClick={()=>handleMenuClick("Preocupaciones")}>
-        
-        <span>Preocupaciones</span>
-        <Link to="/dashboard/Preocupaciones"></Link>
-    </Menu.Item>
-
-    {/* <Menu.Item icon={<AiOutlineCluster /> } onClick={()=>handleMenuClick("Preocupaciones - Ven")}>
-        
-        <span>Preocupaciones - Ven</span>
-        <Link to="/dashboard/Preocupaciones - Ven"></Link>
-    </Menu.Item> */}
-
-    <Menu.Item icon={<AiOutlineCluster /> } onClick={()=>handleMenuClick("Red motivacional del voto")}>
-        
-        <span>Red motivacional del voto</span>
-        <Link to="/dashboard/Red motivacional del voto"></Link>
-    </Menu.Item>
-
-    <Menu.Item icon={<AiOutlineCluster /> } onClick={()=>handleMenuClick("Sentimientos")}>
-        
-        <span>Sentimientos</span>
-        <Link to="/dashboard/Sentimientos"></Link>
-    </Menu.Item>
-
-    <Menu.Item icon={<AiOutlineCluster /> } onClick={()=>handleMenuClick("Voto Emocional y Racional")}>
-        
-        <span>Voto emocional y racional</span>
-        <Link to="/dashboard/Voto Emocional y Racional"></Link>
-    </Menu.Item>
-
-   
-
-    
-
-    </SubMenu>  
 
     {/* <Menu.Item key="/grafos" icon={<GrGraphQl />}>
         <span>Grafos</span>
@@ -142,7 +67,6 @@ const MenuDesplegable = () => {
 
 
  
-  </Menu>
 
 
 </Sider>

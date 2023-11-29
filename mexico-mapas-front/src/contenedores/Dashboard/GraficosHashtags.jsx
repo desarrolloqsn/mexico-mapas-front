@@ -3,7 +3,7 @@ import './Dashboard.css'
 import Filtros from './Filtros'
 import CantidadHashtags from '../../componentes/Graficos/CantidadHashtags';
 import LiquidPlot from '../../componentes/Graficos/LiquidPlot';
-import Mapa from '../../componentes/Graficos/Mapa';
+
 import EvolucionHashtags from '../../componentes/Graficos/EvolucionHashtags';
 import HashtagsMenciones from '../../componentes/Graficos/HashtagsMenciones';
 import NubeHashtags from '../../componentes/Graficos/NubeHashtags';
@@ -30,7 +30,7 @@ export default function GraficosHashtags() {
 
       <div className='columna'>
         <div className='grafico-unico'>
-          <Mapa/>
+       
         </div>
       </div>
 
