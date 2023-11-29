@@ -758,7 +758,7 @@ const sendFilterMap = () => {
 <option value={"Ecatzingo"}>Ecatzingo</option>
 <option value={"Hueypoxtla"}>Hueypoxtla</option>
 <option value={"Huixquilucan"}>Huixquilucan</option>
-<option value={"Isidro Fabel"}>Isidro Fabela</option>
+<option value={"Isidro Fabela"}>Isidro Fabela</option>
 <option value={"Ixtapaluca"}>Ixtapaluca</option>
 <option value={"Ixtapan de la Sal"}>Ixtapan de la Sal</option>
 <option value={"Xalatlaco"}>Xalatlaco</option>
