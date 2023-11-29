@@ -1,0 +1,22 @@
+
+.ant-menu-dark{
+    background-color: #fa6400   !important;
+    color:white
+}
+.ant-layout-sider{
+   background-color: #fa6400   !important;
+     color:white
+}
+.ant-menu-inline{
+    background-color: #fa6400   !important;
+    color:white
+}
+.ant-menu-item:hover{
+    background-color:rgb(168, 168, 168)  !important ;
+    color:rgb(36, 36, 36) !important 
+}
+
+
+.ant-layout-sider-trigger{
+    background-color: #fa6400  !important
+}
