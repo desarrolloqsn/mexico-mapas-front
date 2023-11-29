@@ -772,7 +772,7 @@ const sendFilterMap = () => {
 <option value={"Lerma"}>Lerma</option>
 <option value={"Malinalco"}>Malinalco</option>
 <option value={"Melchor Ocampo"}>Melchor Ocampo</option>
-<option value={"Metepe"}>Metepe </option>
+<option value={"Metepec"}>Metepec</option>
 <option value={"Mexicaltzingo"}>Mexicaltzingo</option>
 <option value={"Morelos"}>Morelos</option>
 <option value={"Naucalpan de Juarez"}>Naucalpan de Juarez</option>
