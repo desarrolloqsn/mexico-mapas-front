@@ -114,18 +114,21 @@ const handleEstadoChange = (event) =>{
       setSelectedOption (event.target.value);
      
     }
-    console.log(selectedOption)
-      const sendFilterMap = () => {
-        if (selectedOption ===  `${selectedOption}`) {
-     
-          const formattedOption = selectedOption.replace(/ /g, '_');
-          const url = `https://mexico-mapas1.vercel.app/mapas/mapa-Choropleth_NSE_${formattedOption}.html`;
-          
-          // Abre el enlace en una nueva ventana
-          window.open(url, '_blank');
-        }
-     
-    }
+    console.log(selectedOption);
+const sendFilterMap = () => {
+  if (selectedOption) {
+    // Elimina espacios al final de la cadena
+    const trimmedOption = selectedOption.replace(/\s+$/, '');
+
+    // Reemplaza espacios con guiones bajos
+    const formattedOption = trimmedOption.replace(/ /g, '_');
+    
+    const url = `https://mexico-mapas1.vercel.app/mapas/mapa-Choropleth_NSE_${formattedOption}.html`;
+    
+    // Abre el enlace en una nueva ventana
+    window.open(url, '_blank');
+  }
+};
   
       
        
