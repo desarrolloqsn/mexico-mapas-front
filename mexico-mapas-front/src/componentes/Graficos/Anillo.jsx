@@ -201,7 +201,7 @@ function renderStatistic(containerWidth, text, style) {
         </Tooltip>
       </div>
     <div className='chart carta' ref={chartContainerRef}>
-      <Pie {...config} className='polaridad' style={{height:'470px'}}/>
+      <Pie {...config} className='polaridad' />
     </div>
     </div>
   );

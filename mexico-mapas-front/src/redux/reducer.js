@@ -6,8 +6,6 @@ const initialState = {
   usuarios:[],
   roles:[],
   
-
-  
   datosGraficos: [datosGraficosBase],
  datosFiltrados:[...datosGraficosBase],
 datosParaFiltros: [...datosGraficosBase],
@@ -96,7 +94,7 @@ const rootReducer = (state = initialState, action) => {
   const { filtros } = action;
 
   let datosFiltradosNuevo = []
-  console.log("DATOS",filtros.datos)
+  // console.log("DATOS",filtros.datos)
   if(filtros.datos.length !== state.datosGraficos.length){
    
      datosFiltradosNuevo = filtros.datos
@@ -106,15 +104,15 @@ const rootReducer = (state = initialState, action) => {
   }
 
   if(filtros.palabra.length === 0 && filtros.sinpalabra.length === 0){
-    console.log("ESTOY EN ARRAY VACIO")
+    // console.log("ESTOY EN ARRAY VACIO")
     datosFiltradosNuevo = state.datosParaFiltros;
   }
   
 
   if (filtros.palabra.length > 0 || filtros.sinpalabra.length > 0) {
-    console.log("FILTRO",filtros.palabra)
-    console.log("sinpalabra",filtros.sinpalabra)
-    console.log("datos",filtros.datos)
+    // console.log("FILTRO",filtros.palabra)
+    // console.log("sinpalabra",filtros.sinpalabra)
+    // console.log("datos",filtros.datos)
     let twitsFiltrados = [] 
     let twitsFiltrados2 =[]
     let twitsExcluidos = datosFiltradosNuevo
@@ -125,15 +123,15 @@ const rootReducer = (state = initialState, action) => {
   
   
     for (let j = 0; j < filtros.palabra.length; j++) {
-      console.log(datosFiltradosNuevo)
+      // console.log(datosFiltradosNuevo)
       if(filtros.palabra.length === 1){
-        console.log("ESTOY ACA")
+        // console.log("ESTOY ACA")
         twitsFiltrados = datosFiltradosNuevo
         twitsFiltrados2.push(twitsFiltrados);
        }
     contador = contador + filtros.palabra.length 
     let palabras = filtros.palabra[j].split(",").map(palabra => palabra.toLowerCase().trim());
-     console.log("PALABRAS[0]",palabras)
+    //  console.log("PALABRAS[0]",palabras)
      for (let i = 0; i < palabras.length; i++) {
       if (palabras[i].includes("-")) {
        contador = contador + 1
@@ -165,20 +163,20 @@ const rootReducer = (state = initialState, action) => {
         }
       });
     });
-    console.log("twitsfiltrados",twitsFiltrados)
+    // console.log("twitsfiltrados",twitsFiltrados)
     twitsFiltrados2.push(twitsFiltrados);
     }
   
   
     for (let j = 0; j < filtros.sinpalabra.length; j++) {
       if(filtros.sinpalabra.length === 1){
-        console.log("ESTOY ACA")
+        // console.log("ESTOY ACA")
         twitsExcluidos = datosFiltradosNuevo
         twitsFiltrados2.push(twitsExcluidos);
        }
        contador = contador + filtros.sinpalabra.length 
       let palabras = filtros.sinpalabra[j].split(",").map(palabra => palabra.toLowerCase().trim());
-       console.log("PALABRAS[0]",palabras[0].length)
+      //  console.log("PALABRAS[0]",palabras[0].length)
        for (let i = 0; i < palabras.length; i++) {
        if (palabras[i].includes("-")) {
         contador = contador + 1
@@ -210,20 +208,20 @@ const rootReducer = (state = initialState, action) => {
           }
         });
       });
-      console.log("twitsExcluidos",twitsExcluidos)
+      // console.log("twitsExcluidos",twitsExcluidos)
       twitsFiltrados2.push(twitsExcluidos);
       }
   
-    console.log(twitsFiltrados2); 
+    // console.log(twitsFiltrados2); 
     let combinado = [].concat(...twitsFiltrados2);
-    console.log(combinado)
+    // console.log(combinado)
   
   
     let objetosRepetidos = combinado.filter((objeto, index) => {
       return combinado.some((obj, i) => i !== index && obj.id === objeto.id);
     });
     
-    console.log(contador)
+    // console.log(contador)
      let objetosUnicos = objetosRepetidos.reduce((unique, objeto) => {
       if (!unique.some((uniqueObjeto) => uniqueObjeto.id === objeto.id)) {
         unique.push(objeto);
@@ -232,7 +230,7 @@ const rootReducer = (state = initialState, action) => {
     }, []);
     
     
-    console.log(objetosUnicos);
+    // console.log(objetosUnicos);
   
   
     datosFiltradosNuevo = objetosUnicos;

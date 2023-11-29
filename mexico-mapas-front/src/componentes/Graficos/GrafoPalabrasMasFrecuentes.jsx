@@ -4,7 +4,6 @@ import { Network } from 'vis-network';
 import { DataSet } from 'vis-data';
 import { Button, Collapse, Tooltip, Select , Card} from 'antd';
 import video from './../../imagenes/Palabras frecuentes.mp4'
-import { MdOpenInNew } from 'react-icons/md'
 import './Graficos.css'
 // import 'antd/dist/antd.css';
 
@@ -230,32 +229,12 @@ Esta combinación de grafos, proporciona una visión más profunda y precisa de 
         -
     </Button>
     </Tooltip>
-    <Tooltip title='Abrir en otro navegador'>
-    <a href={`https://qsngrafos.vercel.app/palabras/pdvsa/grafo_palabras-frecuentes-${filtroFecha}.html`} target="_blank"><Button  shape="circle">
-        <MdOpenInNew/>
-    </Button>
-     </a>
-    </Tooltip>
     </div>
-    <div className='bigramas-trigramas'>
+     <div className='bigramas-trigramas'>
       <div id="bigramas" className='carta2' style={{backgroundColor:"black"}}></div>
-      <Tooltip title='Abrir en otro navegador'>
-    <a href={`https://qsngrafos.vercel.app/palabras/pdvsa/grafo_bigramas-frecuentes-${filtroFecha}.html`} target="_blank"><Button className='boton-abrirnavegador' shape="circle">
-        <MdOpenInNew/>
-    </Button>
-     </a>
-    </Tooltip>
-    
       </div>
       <div className='bigramas-trigramas'>
       <div id="trigramas" className='carta2' style={{backgroundColor:"black"}}></div>
-      <Tooltip title='Abrir en otro navegador'>
-    <a href={`https://qsngrafos.vercel.app/palabras/pdvsa/grafo_trigramas-frecuentes-${filtroFecha}.html`} target="_blank"><Button className='boton-abrirnavegador' shape="circle">
-        <MdOpenInNew/>
-    </Button>
-     </a>
-    </Tooltip>
-    
       </div>
     </div>
     :
@@ -266,34 +245,14 @@ Esta combinación de grafos, proporciona una visión más profunda y precisa de 
     <Button  shape="circle" onClick={handleDisplay}>
         +
     </Button>
-     </Tooltip>
-     <Tooltip title='Abrir en otro navegador'>
-    <a href={`https://qsngrafos.vercel.app/palabras/pdvsa/grafo_palabras-frecuentes-${filtroFecha}.html`} target="_blank"><Button  shape="circle">
-        <MdOpenInNew/>
-    </Button>
-     </a>
     </Tooltip>
     
       </div>
       <div className='bigramas-trigramas'>
       <div id="bigramas" className='carta2' style={{backgroundColor:"black"}}></div>
-      <Tooltip title='Abrir en otro navegador'>
-    <a href={`https://qsngrafos.vercel.app/palabras/pdvsa/grafo_bigramas-frecuentes-${filtroFecha}.html`} target="_blank"><Button className='boton-abrirnavegador' shape="circle">
-        <MdOpenInNew/>
-    </Button>
-     </a>
-    </Tooltip>
-    
       </div>
       <div className='bigramas-trigramas'>
       <div id="trigramas" className='carta2' style={{backgroundColor:"black"}}></div>
-      <Tooltip title='Abrir en otro navegador'>
-    <a href={`https://qsngrafos.vercel.app/palabras/pdvsa/grafo_trigramas-frecuentes-${filtroFecha}.html`} target="_blank"><Button className='boton-abrirnavegador' shape="circle">
-        <MdOpenInNew/>
-    </Button>
-     </a>
-    </Tooltip>
-    
       </div>
       </div>
     }

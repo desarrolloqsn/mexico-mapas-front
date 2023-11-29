@@ -10,7 +10,6 @@ import {  FaUsers } from "react-icons/fa";
 import { TbCategory } from 'react-icons/tb'
 import { useDispatch } from 'react-redux';
 import { filtrarDatos } from "../../redux/actions";
-import {HiHashtag} from 'react-icons/hi'
 
 const { Sider } = Layout;
 
@@ -36,16 +35,16 @@ const MenuDesplegable = () => {
 
   <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" >
 
-    {/* <Menu.Item key="/dashboard" icon={  <BarChartOutlined />} onClick={()=>handleMenuClick("")}>
+    <Menu.Item key="/dashboard" icon={  <BarChartOutlined />} onClick={()=>handleMenuClick("")}>
        
       <span> Dashboard</span>
       <Link to="/dashboard"></Link>
-    </Menu.Item> */}
+    </Menu.Item>
 
 
 
    
-{/*  
+ 
     <SubMenu icon={< AiOutlineCluster />} title="Modelos" >
 
 
@@ -80,11 +79,11 @@ const MenuDesplegable = () => {
         <Link to="/dashboard/Preocupaciones"></Link>
     </Menu.Item>
 
-    <Menu.Item icon={<AiOutlineCluster /> } onClick={()=>handleMenuClick("Preocupaciones - Ven")}>
+    {/* <Menu.Item icon={<AiOutlineCluster /> } onClick={()=>handleMenuClick("Preocupaciones - Ven")}>
         
         <span>Preocupaciones - Ven</span>
         <Link to="/dashboard/Preocupaciones - Ven"></Link>
-    </Menu.Item>
+    </Menu.Item> */}
 
     <Menu.Item icon={<AiOutlineCluster /> } onClick={()=>handleMenuClick("Red motivacional del voto")}>
         
@@ -108,15 +107,11 @@ const MenuDesplegable = () => {
 
     
 
-    </SubMenu>   */}
+    </SubMenu>  
 
     {/* <Menu.Item key="/grafos" icon={<GrGraphQl />}>
         <span>Grafos</span>
         <Link to="/dashboard/grafos"></Link>
-      </Menu.Item>
-      <Menu.Item key="/Hashtags" icon={<HiHashtag />}>
-        <span>Hashtags</span>
-        <Link to="/dashboard/Hashtags"></Link>
       </Menu.Item> */}
 {/* 
     <Menu.Item key="/dashboard/series" icon={  <TbCategory />}>

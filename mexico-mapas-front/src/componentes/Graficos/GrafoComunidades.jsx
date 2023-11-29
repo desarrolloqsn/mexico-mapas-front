@@ -15,7 +15,6 @@ export default function GraphComunidades(){
 
 // FILTRO FECHAS
 const [fechas, setFechas] = useState(jsonFechas.fechas)
-console.log(jsonFechas)
 const [filtroFecha, setFiltroFecha] = useState(fechas[0])
 
 const opciones = fechas.slice(0, -1).map((fecha, index) => {
@@ -49,7 +48,7 @@ const handleFiltroFechaChange = (valor) => {
     <div className='grafo-video' >
   
     <Tooltip title="Click para ver el grafo">
-    <a href={`https://qsngrafos.vercel.app/hasgtags-menciones/pdvsa/grafo_hashtags_menciones-${filtroFecha}.html`} target="_blank">
+    <a href={`https://qsngrafos.vercel.app/hasgtags-menciones/ceofanb-ig/grafo_hashtags_menciones-${filtroFecha}.html`} target="_blank">
     <div className='video-explicativo cartaGrafo'>
       <img src={imagen} className='imagen-grafo' />
     </div>

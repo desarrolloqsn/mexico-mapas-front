@@ -12,6 +12,16 @@
 
 }
 
+.spin-base64{
+    margin: 1rem 0rem 1rem 0rem;
+}
+
+.imagen-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .link-tweet{
     display: flex;
     flex-wrap: wrap;

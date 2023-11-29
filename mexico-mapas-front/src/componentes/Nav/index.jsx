@@ -16,7 +16,12 @@ export default function Nav() {
             <Link to='/dashboard' class="navbar-brand" >
             <img src={logo} alt="Logo" className='logo'/>
             </Link>
+            <div className='logo-logout'>
+            <Avatar size="medium" icon={<UserOutlined />} className='icono-avatar'/>
+           <div className='linea'>|</div>
+            <Button type='boton'><AiOutlineLogout className='icon-logout'/></Button>
             
+            </div>
         </div>
         </nav>
     </div>

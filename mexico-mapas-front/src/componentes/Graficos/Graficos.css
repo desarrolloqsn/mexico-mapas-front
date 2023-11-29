@@ -7,25 +7,19 @@
 
 }
 
-.estadisticasHashtags{
-    display: flex;
-    height: 300px;
-    justify-content: center;
+.grafo-eventos-alcance{
+    margin-top: 0.7rem;
 }
 
 .imagen-grafo{
   width: 100%;
+  border-radius: 10px;
 }
 
-.tootlip-boxplot{
-    display: flex;
-    flex-direction: column;
-    gap:1rem;
-    justify-content: start;
-    padding:1rem;
-    align-items: start;
-    text-align: start;
-}
+.imagen-grafo-eventos{
+    width: 100%;
+  
+  }
 
 .contenedor-tooltip-polar{
     padding-top: 1rem ;
@@ -44,29 +38,18 @@
    align-self: center;
 }
 
-.subtitulo-boton{
+/* .subtitulo-boton{
     background-color: #fe8f33ba
 }
 
 .subtitulo-boton:hover{
     background-color: #f97000 !important
+} */
+
+.nubepalabras{
+    max-height: 480px !important;
 }
 
-
-.cartaHashtags{
-    display: flex;
-    justify-content: center;
-    align-items: center !important;
-    text-align: center !important;  
-    border: 0.5px solid rgb(212, 212, 212);
-    border-radius: 20px;
-    background-color: rgb(255, 255, 255);
-  box-shadow: 2px 4px 5px -2px rgba(182, 182, 182, 0.75);
--webkit-box-shadow: 2px 4px 5px -2px rgba(182, 182, 182, 0.75);
--moz-box-shadow: 2px 4px 5px -2px rgba(182, 182, 182, 0.75);
-    padding: 1rem;
-    margin-bottom: 1rem;
-}
 
 
 .carta{
@@ -87,6 +70,26 @@
     padding: 1rem;
     margin-bottom: 1rem;
 } 
+
+.cartaGrafoEventos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center !important;
+    text-align: center !important;  
+    border: 0.5px solid rgb(212, 212, 212);
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+   /*  box-shadow: 10px 10px 5px 0px rgba(211,211,211,0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(211,211,211,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(211,211,211,0.75);  */
+  box-shadow: 2px 4px 5px -2px rgba(182, 182, 182, 0.75);
+-webkit-box-shadow: 2px 4px 5px -2px rgba(182, 182, 182, 0.75);
+-moz-box-shadow: 2px 4px 5px -2px rgba(182, 182, 182, 0.75);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    min-height: 480px;
+}
 
 
 .cartaGrafo{
@@ -109,6 +112,10 @@
     margin-bottom: 1rem;
    
 } 
+
+.subtitulo-grafo{
+    padding-left:1rem
+}
 
 .carta2{
     display: flex;
@@ -173,21 +180,9 @@
 
 }
 
-.nubepalabras{
-    max-height: 480px !important;
-}
-
 .valor-grande .ant-statistic-content-value {
     font-size: 30px; /* Ajusta el tamaño de fuente según tus necesidades */
   }
-
-  .valor-grandeHashtags .ant-statistic-content-value {
-    font-size: 50px; /* Ajusta el tamaño de fuente según tus necesidades */
-  }
-
-.valor-grandeHashtags .ant-statistic-title{
-    font-size: 25px;
-}
 
 .video-texto2{
     display: flex;

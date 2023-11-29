@@ -1,4 +1,4 @@
-import { Area } from '@ant-design/plots';
+import { Area, Line } from '@ant-design/plots';
 import { Button, Modal, Tooltip } from 'antd';
 import XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
@@ -16,18 +16,25 @@ export default function LineaEventos() {
     const currentUrl = location.pathname;
     const subUrl = currentUrl.startsWith('/dashboard/') ? currentUrl.substring('/dashboard/'.length) : '';
     const modeloSinEspacios = decodeURIComponent(subUrl.replace(/\+/g, " "));
-  
+   const [modo, setModo] = useState('serie'); // Estado para almacenar el modo actual
     const tweetsFiltrados = datos.filter(tweet => {
       const propiedadModelo = tweet[modeloSinEspacios];
       return Array.isArray(propiedadModelo) && propiedadModelo.length > 0;
     });
-    
+    // console.log(datos)
     const dias = datos.map(tweet => tweet.date);
     const diasUnicos = [...new Set(dias)];
-
+    const filtros = useSelector(state=> state.filtros)
+    // console.log("filtros subserie", filtros.subserie)
     // console.log(diasUnicos);
     // console.log(tweetsFiltrados);
-
+const handleModoClick = () => {
+    if (modo === 'serie') {
+      setModo('subserie');
+    } else {
+      setModo('serie');
+    }
+  };
 
     const handleLineClick = () => {
       setIsModalVisible(true);
@@ -37,89 +44,112 @@ export default function LineaEventos() {
       setIsModalVisible(false);
     };
     const dispatch = useDispatch();
+
+
     
     let countBySeriesAndDate 
     
-    if(diasUnicos.length > 1){
+  
+  if (diasUnicos.length > 1) {
     if (tweetsFiltrados.length > 0) {
       countBySeriesAndDate = tweetsFiltrados ? tweetsFiltrados.reduce((count, tweet) => {
-       const seriesName = tweet.seriesName;
-       const date = tweet.date;
-     
-       // Verificar si ya existe una entrada para la serie y la fecha actual
-       if (!count[seriesName]) {
-         count[seriesName] = {};
-       }
-       if (!count[seriesName][date]) {
-         count[seriesName][date] = 0;
-       }
-     
-       // Incrementar el contador para la serie y la fecha actual
-       count[seriesName][date]++;
-     
-       return count;
-     }, {}) : null;
- 
-   } else {
+        const seriesNames = modo === 'serie' ? [tweet.seriesName] : tweet.subSeriesName;
+        const date = tweet.date;
+  
+        seriesNames.forEach(name => {
+          const seriesName = String(name);
+  
+          if (!count[seriesName]) {
+            count[seriesName] = {};
+          }
+          if (!count[seriesName][date]) {
+            count[seriesName][date] = 0;
+          }
+  
+          count[seriesName][date]++;
+        });
+  
+        return count;
+      }, {}) : null;
+    } else {
       countBySeriesAndDate = datos ? datos.reduce((count, tweet) => {
-       const seriesName = tweet.seriesName;
-       const date = tweet.date;
-     
-       // Verificar si ya existe una entrada para la serie y la fecha actual
-       if (!count[seriesName]) {
-         count[seriesName] = {};
-       }
-       if (!count[seriesName][date]) {
-         count[seriesName][date] = 0;
-       }
-     
-       // Incrementar el contador para la serie y la fecha actual
-       count[seriesName][date]++;
-     
-       return count;
-     }, {}) : null;
-   }
-  } else if (diasUnicos.length >= 1){
+        const seriesNames = modo === 'serie' ? [tweet.seriesName] : tweet.subSeriesName;
+        const date = tweet.date;
+  
+        seriesNames.forEach(name => {
+          const seriesName = String(name);
+  
+          if (!count[seriesName]) {
+            count[seriesName] = {};
+          }
+          if (!count[seriesName][date]) {
+            count[seriesName][date] = 0;
+          }
+  
+          count[seriesName][date]++;
+        });
+  
+        return count;
+      }, {}) : null;
+    }
+  } else if (diasUnicos.length >= 1) {
     if (tweetsFiltrados.length > 0) {
       countBySeriesAndDate = tweetsFiltrados ? tweetsFiltrados.reduce((count, tweet) => {
-       const seriesName = tweet.seriesName;
-       const date = tweet.hora;
-     
-       // Verificar si ya existe una entrada para la serie y la fecha actual
-       if (!count[seriesName]) {
-         count[seriesName] = {};
-       }
-       if (!count[seriesName][date]) {
-         count[seriesName][date] = 0;
-       }
-     
-       // Incrementar el contador para la serie y la fecha actual
-       count[seriesName][date]++;
-     
-       return count;
-     }, {}) : null;
- 
-   } else {
+        const seriesNames = modo === 'serie' ? [tweet.seriesName] : tweet.subSeriesName;
+        const date = tweet.hora;
+  
+        seriesNames.forEach(name => {
+          const seriesName = String(name);
+  
+          if (!count[seriesName]) {
+            count[seriesName] = {};
+          }
+          if (!count[seriesName][date]) {
+            count[seriesName][date] = 0;
+          }
+  
+          count[seriesName][date]++;
+        });
+  
+        return count;
+      }, {}) : null;
+    } else {
       countBySeriesAndDate = datos ? datos.reduce((count, tweet) => {
-       const seriesName = tweet.seriesName;
-       const date = tweet.hora;
-     
-       // Verificar si ya existe una entrada para la serie y la fecha actual
-       if (!count[seriesName]) {
-         count[seriesName] = {};
-       }
-       if (!count[seriesName][date]) {
-         count[seriesName][date] = 0;
-       }
-     
-       // Incrementar el contador para la serie y la fecha actual
-       count[seriesName][date]++;
-     
-       return count;
-     }, {}) : null;
-   }
+        const seriesNames = modo === 'serie' ? [tweet.seriesName] : tweet.subSeriesName;
+        const date = tweet.hora;
+  
+        seriesNames.forEach(name => {
+          const seriesName = String(name);
+  
+          if (!count[seriesName]) {
+            count[seriesName] = {};
+          }
+          if (!count[seriesName][date]) {
+            count[seriesName][date] = 0;
+          }
+  
+          count[seriesName][date]++;
+        });
+  
+        return count;
+      }, {}) : null;
+    }
   }
-     
+  
+  // Filtrar subseries si filtros.subserie está definido
+  if (filtros && filtros.subserie && Array.isArray(filtros.subserie) && filtros.subserie.length > 0) {
+    const subSeriesFiltradas = filtros.subserie.map(subserie => String(subserie));
+  
+    Object.keys(countBySeriesAndDate).forEach(seriesName => {
+      if (!subSeriesFiltradas.includes(seriesName)) {
+        delete countBySeriesAndDate[seriesName];
+      }
+    });
+  }
+
+
+
+
      // console.log(countBySeriesAndDate);
      
      const data = countBySeriesAndDate ? Object.entries(countBySeriesAndDate).flatMap(([seriesName, dates]) => {
@@ -183,12 +213,16 @@ export default function LineaEventos() {
       <div className='titulo-carta'>Linea de eventos</div>
       <div className='subtitulo-carta'>
         <div>Cantidad de eventos por día</div>
+        <Button onClick={handleModoClick} type="primary"  className='subtitulo-boton'>
+        {modo === 'serie' ?   'Por Subserie' : 'Por Serie'}
+      </Button>
         <Tooltip title="Descargar Excel">
         <Button onClick={handleDownloadExcel} type="primary" shape="circle"  className='subtitulo-boton'><HiDocumentDownload/></Button>
         </Tooltip> </div>
       
       
-      <Area {...config} className='lineaEventos carta' style={{ height: '300px' }} />
+
+      <Line {...config} className='lineaEventos carta' style={{ height: '300px' }} />
       
       <Modal title="Mi Modal" open={isModalVisible} onCancel={handleCloseModal} onOk={handleCloseModal}>
         Contenido del modal

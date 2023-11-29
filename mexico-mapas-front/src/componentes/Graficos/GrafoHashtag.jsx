@@ -18,12 +18,12 @@ export default function GraphHashtags(){
  const [filtroFecha, setFiltroFecha] = useState(fechas[0])
 
  const opciones = fechas.slice(0, -1).map((fecha, index) => {
-  return (
-    <Select.Option key={index} value={fecha}>
-      {fecha}
-    </Select.Option>
-  );
-});
+   return (
+     <Select.Option key={index} value={fecha}>
+       {fecha}
+     </Select.Option>
+   );
+ });
 
  const handleFiltroFechaChange = (valor) => {
    setFiltroFecha(valor);
@@ -46,7 +46,7 @@ export default function GraphHashtags(){
     <div className='grafo-video'>
     
     <Tooltip title="Click para ver el grafo">
-    <a href={`https://qsngrafos.vercel.app/co-ocurrencia/pdvsa/grafo_co-ocurencia_hashtags-${filtroFecha}.html`} target="_blank">
+    <a href={`https://qsngrafos.vercel.app/co-ocurrencia/ceofanb-ig/grafo_co-ocurencia_hashtags-${filtroFecha}.html`} target="_blank">
     <div className='video-explicativo cartaGrafo'>
       <img src={imagen} className='imagen-grafo' />
     </div>

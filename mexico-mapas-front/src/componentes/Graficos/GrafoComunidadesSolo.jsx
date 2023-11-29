@@ -54,8 +54,7 @@ useEffect(() => {
 
 
 
- const opciones = fechas.slice(0, -1).map((fecha, index) => {
-   return (
+const opciones = fechas.slice(0, -1).map((fecha, index) => {   return (
      <Select.Option key={index} value={fecha}>
        {fecha}
      </Select.Option>

@@ -56,13 +56,14 @@ useEffect(() => {
 
 
 
+
 const opciones = fechas.slice(0, -1).map((fecha, index) => {
-  return (
-    <Select.Option key={index} value={fecha}>
-      {fecha}
-    </Select.Option>
-  );
-});
+   return (
+     <Select.Option key={index} value={fecha}>
+       {fecha}
+     </Select.Option>
+   );
+ });
 
  const handleFiltroFechaChange = (valor) => {
    setFiltroFecha(valor);
@@ -120,12 +121,6 @@ const opciones = fechas.slice(0, -1).map((fecha, index) => {
       sorter: (a, b) => a.Centralidad - b.Centralidad,
       width: '200%',
     },
-    {
-      title: 'Seguidores',
-      dataIndex: 'Seguidores',
-      sorter: (a, b) => a.Seguidores - b.Seguidores,
-      width: '150%',
-    }
 
    
   ];
@@ -247,7 +242,7 @@ const opciones = fechas.slice(0, -1).map((fecha, index) => {
     
     <div className='carta video-texto2 scrollable-card'> 
     <Tooltip title="Click para ver el grafo">
-    <a href={`https://qsngrafos.vercel.app/comunidades/pdvsa/grafo_comunidades-${filtroFecha}.html`} target="_blank">
+    <a href={`https://qsngrafos.vercel.app/comunidades/ceofanb-ig/grafo_comunidades-${filtroFecha}.html`} target="_blank">
     <div className='video-explicativo cartaGrafo'>
       <img src={imagen} className='imagen-grafo' />
     </div>

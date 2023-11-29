@@ -17,9 +17,17 @@ import GrafoComunidadesSolo from './componentes/Graficos/GrafoComunidadesSolo';
 import { Navigate } from 'react-router-dom';
 import Error404 from './contenedores/404/index.jsx';
 import { loginSuccess } from './redux/actions';
-import DashHashtags from './contenedores/Dashboard/DashboardHashtags';
 
 
+// function PrivateRoute({ element, ...rest }) {
+//   const user = useSelector((state) => state.auth.user);
+
+//   return user ? (
+//     <Route {...rest} element={element} />
+//   ) : (
+//     <Navigate to="/" replace />
+//   );
+// }
 
 
 
@@ -229,7 +237,7 @@ function App() {
     const storedPassword = localStorage.getItem('password');
   
    // Si se encuentran almacenados, realizar el inicio de sesión automáticamente
-   if (storedUsername === "analistas" ||storedPassword === "qsnpdvsa" && storedPassword === "qsn123" || storedPassword === "qsnpdvsa2023") {
+   if (storedUsername === "analistas" ||storedPassword === "qsnceofanb" && storedPassword === "qsn123" || storedPassword === "qsnceofanb2023") {
     const user = {
       username: storedUsername,
       roles: ['user'],
@@ -253,7 +261,7 @@ function App() {
         <PrivateRoute path="/dashboard/*" element={<DashboardContainer />} />
     </Routes> */}
     
-    <Routes> 
+  <Routes> 
 
         <Route path="/" element={user ? <Navigate to="/dashboard" replace /> : <Login />} />
         {user && (
@@ -306,7 +314,6 @@ function DashboardContainer() {
         <Route path="/Preocupaciones - Ven" element={<DashModelo />} />
         <Route path="/Red motivacional del voto" element={<DashModelo />} />
         <Route path="/Sentimientos" element={<DashModelo />} />
-        <Route path="/Hashtags" element={<DashHashtags />} />
         <Route path="/Voto Emocional y Racional" element={<DashModelo />} />
         
       </Routes>
