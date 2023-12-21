@@ -123,7 +123,7 @@ const sendFilterMap = () => {
     // Reemplaza espacios con guiones bajos
     const formattedOption = trimmedOption.replace(/ /g, '_');
     
-    const url = `https://mexico-mapas1.vercel.app/mapas/mapa-Choropleth_NSE_${formattedOption}.html`;
+    const url = `https://qsocialnow.com/mapas/mapa-Choropleth_NSE_${formattedOption}.html`;
     
     // Abre el enlace en una nueva ventana
     window.open(url, '_blank');
@@ -714,17 +714,51 @@ const sendFilterMap = () => {
     <div className='contenedor-selectores'>
 
       <select name="Estado Federativo"  value={selectedEstado} onChange={handleEstadoChange} className={'estado'}>
-          <option value="none" className='option0'>Seleccione un Estado federativo</option>
+          <option value="none" className='option0'>Seleccione una entidad federativa </option>
+          <option value="Ciudad de Mexico" className='option4'> Ciudad de Mexico</option>
           <option value="Estado de Mexico" className='option1'> Estado de Mexico</option>
           <option value="Quintana Roo" className='option2'> Quintana Roo</option>
           <option value="Guadalajara Area Metropolitana" className='option3'> Guadalajara Area Metropolitana</option>
       </select>
+
+
+      {selectedEstado ==="Ciudad de Mexico" &&(
+<select placeholder='Ciudad de Mexico' id='select4' value={selectedOption} onChange={handleSelectChange}>
+
+<option value={""}>Indique su seleccion</option>
+<option value={"CDMX"}>Ciudad de Mexico</option>
+<option value={"IZTAPALAPA"}>Iztapalapa</option>
+<option value={"GUSTAVO_A._MADERO"}>Gustavo a Madero</option>
+<option value={"TLALPAN"}>Tlalpan</option>
+<option value={"ÁLVARO_OBREGÓN"}> Álvaro Obregón</option>
+<option value={"COYOACÁN"}>Coyoacán</option>
+<option value={"XOCHIMILCO"}>Xochimilco</option>
+<option value={"TLÁHUAC"}>Tláhuac</option>
+<option value={"VENUSTIANO_CARRANZA"}>Venustiano Carranza</option>
+<option value={"BENITO_JUÁREZ"}>Benito Juárez</option>
+<option value={"CUAUHTÉMOC "}>Cuauhtémoc</option>
+<option value={"AZCAPOTZALCO"}>Azcapotzalco</option>
+
+<option value={"LA_MAGDALENA_CONTRERAS"}>La Magdalena Contreras</option>
+<option value={"MIGUEL_HIDALGO"}>Miguel Hidalgo</option>
+<option value={"CUAJIMALPA_DE_MORELOS"}>Cuajimalpa de Morelos</option>
+<option value={"IZTACALCO"}>Iztacalco</option>
+<option value={"MILPA_ALTA"}>Milpa Alta</option>
+
+
+</select>
+
+)}
+
+
+
 
 {selectedEstado ==="Estado de Mexico" &&(
 
 <select placeholder='municipios mexico' id='select1' value={selectedOption} onChange={handleSelectChange}>
 
   <option value={""}>Seleccione un municipio</option>
+  <option value={"Estado_Mexico"}> Estado de Mexico</option>
 <option value={"Acambay de Ruiz Castañeda"}>Acambay de Ruiz Castañeda</option>
 <option value={"Acolman"}>Acolman</option>
 <option value={"Aculco"}>Aculco</option>
@@ -845,6 +879,7 @@ const sendFilterMap = () => {
 {selectedEstado === "Quintana Roo" &&(
   <select placeholder='municipios quintana' id='select2' value={selectedOption} onChange={handleSelectChange}>
      <option value={""}>Seleccione un municipio</option>
+     <option value={"QuintanaRoo"}>Quintana Roo</option> 
 <option value={"Cozumel"}>Cozumel</option>
 <option value={"Felipe Carrillo Puerto"}>Felipe Carrillo Puerto</option>
 <option value={"Isla Mujeres"}>Isla Mujeres</option>
@@ -867,6 +902,7 @@ const sendFilterMap = () => {
 {selectedEstado === "Guadalajara Area Metropolitana" &&(
   <select placeholder='Municipios Guadalajara' id='select3' value={selectedOption} onChange={handleSelectChange}> 
    <option value={""}>Seleccione un municipio</option>
+   <option value={"Guadalajara-Completo"}>Guadalajara</option>
 <option value={"ACATLÁN DE JUÁREZ"}>Acatlán De Juárez</option>
 <option value={"GUADALAJARA"}>Guadalajara</option>
 <option value={"ZAPOPAN"}>Zapopan</option>
